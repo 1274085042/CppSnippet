@@ -1,0 +1,1 @@
+该sample使用了C++11的CRTP（curiously recurring template pattern）和enable_shared_from_this这些特性。

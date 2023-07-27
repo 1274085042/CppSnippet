@@ -8,3 +8,6 @@ void copy_kernel(int& iter, bool /*non_blocking*/)
 }
 
 REGISTER_CPU_DISPATCH(copy_stub, copy_kernel)
+/*
+static RegisterCPUDispatch<struct copy_stub> copy_stub__register(copy_stub, copy_kernel);
+*/

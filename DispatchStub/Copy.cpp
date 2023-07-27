@@ -9,3 +9,6 @@ void copy()
 }
 
 DEFINE_DISPATCH(copy_stub);
+/*
+struct copy_stub copy_stub;
+*/

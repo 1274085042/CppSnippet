@@ -55,11 +55,11 @@ struct  DispatchStubImpl
     void* mps_dispatch_ptr = nullptr;
 };
 
-template <typename FnPtr, typename T>
+template <typename FnPtr>
 struct DispatchStub;
 
-template <typename rT, typename T, typename... Args>
-struct DispatchStub<rT (*)(Args...), T> 
+template <typename rT, typename... Args>
+struct DispatchStub<rT (*)(Args...)> 
 {
   using FnPtr = rT (*) (Args...);
 
@@ -104,7 +104,7 @@ namespace
 } 
 
 #define DECLARE_DISPATCH(fn, name)         \
-  struct name : DispatchStub<fn, name> {   \
+  struct name : DispatchStub<fn> {         \
     name() = default;                      \
     name(const name&) = delete;            \
     name& operator=(const name&) = delete; \
